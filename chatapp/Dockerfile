@@ -16,4 +16,4 @@ ENV AWS_DEFAULT_REGION=eu-west-3
 EXPOSE 8501
 
 # Run app.py when the container launches
-CMD ["python", "chat.py"]
+CMD ["streamlit", "run", "chat.py"]
