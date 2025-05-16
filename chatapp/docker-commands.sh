@@ -5,6 +5,8 @@
 # build it
 docker build -t chatapp .
 
+# Assume role into the test AWS account
+
 # test it
 docker run -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \
            -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \

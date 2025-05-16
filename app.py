@@ -14,9 +14,7 @@ SecretManagerStack(app, "SecretManagerStack", properties)
 
 EcrPipelineStack(app, "EcrPipelineStack", properties)
 
-# BatchStack(app, "BatchStack", properties)
-
-# EventStack(app, "EventStack", properties)
+# EcsStack(app, "EcsStack", properties)
 
 app.synth()
 
