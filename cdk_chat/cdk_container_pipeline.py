@@ -78,8 +78,6 @@ class EcrPipelineStack(cdk.Stack):
         # 3. Source action: GitHub source
         source_output = codepipeline.Artifact()
 
-        # GitHub access token stored in AWS Secrets Manager
-        # github_token = secretsmanager.Secret.from_secret_name_v2(self, "GitHubToken", "github-token")
         secret_value = properties["GitSecret"].secret_value
 
         source_action = codepipeline_actions.GitHubSourceAction(
@@ -87,7 +85,6 @@ class EcrPipelineStack(cdk.Stack):
             owner="vbontoux",  # Replace with your GitHub username
             repo="chatapp",    # Replace with your git repository name
             branch="main",           # Replace with your repository branch
-            #oauth_token=cdk.SecretValue.secrets_manager("github-token"), 
             oauth_token=secret_value,
             output=source_output
         )
